@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 11:18:05 by malaakso         ###   ########.fr       */
+/*   Created: 2022/11/11 17:08:53 by malaakso          #+#    #+#             */
+/*   Updated: 2022/12/15 13:43:09 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+// Moved get_next_line	function prototype to libft.h
+// Moved ft_strndup		function prototype to libft.h
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+
+# include <stdlib.h>
+# include <unistd.h>
 # include "libft.h"
-# include "mlx.h"
 
-typedef struct s_fdf
-{
-	int	width;
-	int	height;
-	int	**z_grid;
-}				t_fdf;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
 
 #endif

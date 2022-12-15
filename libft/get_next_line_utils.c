@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 11:18:05 by malaakso         ###   ########.fr       */
+/*   Created: 2022/11/11 17:08:44 by malaakso          #+#    #+#             */
+/*   Updated: 2022/12/15 13:26:29 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "get_next_line.h"
 
-# include "libft.h"
-# include "mlx.h"
-
-typedef struct s_fdf
+char	*ft_strndup(const char *s1, size_t n)
 {
-	int	width;
-	int	height;
-	int	**z_grid;
-}				t_fdf;
+	char	*p;
+	size_t	i;
 
-#endif
+	p = ft_calloc(n + 1, 1);
+	if (!p)
+		return (0);
+	p[n] = '\0';
+	i = 0;
+	while (s1[i] && i < n)
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	return (p);
+}

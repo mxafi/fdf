@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 11:18:05 by malaakso         ###   ########.fr       */
+/*   Created: 2022/11/22 15:48:37 by malaakso          #+#    #+#             */
+/*   Updated: 2022/12/15 13:41:22 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+// ft_printf function prototype has been moved to libft.h
 
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
 # include "libft.h"
-# include "mlx.h"
-
-typedef struct s_fdf
-{
-	int	width;
-	int	height;
-	int	**z_grid;
-}				t_fdf;
+# include "ft_printf_utils.h"
+# include "ft_printf_spec_hex.h"
 
 #endif

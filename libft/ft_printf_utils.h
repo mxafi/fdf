@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_printf_utils.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 11:18:05 by malaakso         ###   ########.fr       */
+/*   Created: 2022/11/25 14:48:07 by malaakso          #+#    #+#             */
+/*   Updated: 2022/11/26 02:02:24 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef FT_PRINTF_UTILS_H
+# define FT_PRINTF_UTILS_H
 
-# include "libft.h"
-# include "mlx.h"
+# include <unistd.h>
 
-typedef struct s_fdf
-{
-	int	width;
-	int	height;
-	int	**z_grid;
-}				t_fdf;
+int	ft_int_putchar_fd(char c, int fd);
+int	ft_int_putstr_fd(char *s, int fd);
+int	ft_int_putnbr_fd(int n, int fd);
+int	ft_int_putnbr_uint_fd(unsigned int n, int fd);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: malaakso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:05:44 by malaakso          #+#    #+#             */
-/*   Updated: 2022/11/26 00:13:17 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:43:28 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strrev(char *s);
+int		ft_printf(const char *input, ...);
+char	*get_next_line(int fd);
+char	*ft_strndup(const char *s1, size_t n);
 
 #endif

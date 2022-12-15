@@ -6,7 +6,7 @@
 #    By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:25:10 by malaakso          #+#    #+#              #
-#    Updated: 2022/12/14 16:55:05 by malaakso         ###   ########.fr        #
+#    Updated: 2022/12/15 13:54:06 by malaakso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ clean:
 	rm -f $(OBJ_PATHS)
 	rm -rf $(OBJ_FOLDER)
 	$(MAKE) fclean -C $(LIBFT_FOLDER)
-	$(MAKE) fclean -C $(MINILIBX_FOLDER)
+	$(MAKE) clean -C $(MINILIBX_FOLDER)
 
 .PHONY: fclean
 fclean: clean
