@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 15:40:09 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:52:58 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,33 @@
 
 int	main(int argc, char **argv)
 {
-	int	fd;
-	if (argc < 2 || argc > 3)
+	t_fdf	*fdf;
+
+	if (argc < 2 || argc > 2)
 	{
 		ft_printf("Usage : ./fdf <file>.fdf\n");
 		return (1);
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (!is_file_descriptor_valid(fd))
-	{
-		ft_printf("File is not valid.\n");
-		close(fd);
+	if (!check_file(argv[1]))
 		return (1);
+	fdf = malloc(sizeof(t_fdf));
+	if (!fdf)
+		return (1);
+	read_file(argv[1], fdf);
+	ft_printf("Size: %i by %i\n", fdf->height, fdf->width);
+	int i, j;
+
+	i = 0;
+	while (i < fdf->height)
+	{
+		j = 0;
+		while (j < fdf->width)
+		{
+			ft_printf("%i ", fdf->z_grid[i][j]);
+			j++;
+		}
+		ft_printf("\n");
+		i++;
 	}
-	close(fd);
-	ft_printf("The height of the map is: %i\n", ret_height(argv[1]));
 	return (0);
 }

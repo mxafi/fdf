@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/15 15:35:42 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:18:00 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_fdf
 	int	**z_grid;
 }				t_fdf;
 
-int	is_file_descriptor_valid(int fd);
-int	ret_height(char *file_path);
+int		check_file(char *file_path);
+void	read_file(char *file_path, t_fdf *fdf);
 
 #endif
