@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/16 18:18:00 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:56:34 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ typedef struct s_fdf
 
 int		check_file(char *file_path);
 void	read_file(char *file_path, t_fdf *fdf);
+float	float_max_2(float a, float b);
 
 #endif

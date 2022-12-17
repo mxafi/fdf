@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/16 19:52:58 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 16:34:57 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 		j = 0;
 		while (j < fdf->width)
 		{
-			ft_printf("%i ", fdf->z_grid[i][j]);
+			ft_printf("%i", fdf->z_grid[i][j]);
 			j++;
 		}
 		ft_printf("\n");

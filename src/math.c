@@ -6,15 +6,17 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 17:24:48 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/17 17:50:37 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:55:42 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	int_max_2(int a, int b)
+float	float_max_2(float a, float b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
+
+
