@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/17 19:07:51 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 21:54:23 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ typedef struct s_fdf
 	int		width;
 	int		height;
 	int		**z_grid;
-	float	start_x;
-	float	start_y;
-	float	end_x;
-	float	end_y;
+	int		zoom;
+	float	line_x0;
+	float	line_y0;
+	float	line_x1;
+	float	line_y1;
+	float	map_x;
+	float	map_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }				t_fdf;
@@ -36,7 +39,9 @@ typedef struct s_fdf
 int		check_file(char *file_path);
 void	read_file(char *file_path, t_fdf *fdf);
 float	float_max_2(float a, float b);
+int		int_max_2(int a, int b);
 float	float_abs(float x);
-void	draw_line(t_fdf *fdf);
+int		int_abs(int x);
+void	draw(t_fdf *fdf);
 
 #endif
