@@ -6,7 +6,7 @@
 #    By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:25:10 by malaakso          #+#    #+#              #
-#    Updated: 2022/12/17 17:24:24 by malaakso         ###   ########.fr        #
+#    Updated: 2022/12/17 18:34:23 by malaakso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
 C_FLAGS			=	-Wall -Wextra -Werror
-C_FLAGS			+=	
+C_FLAGS			+=	-framework OpenGL -framework AppKit
 
 .PHONY: all
 all: $(NAME)
