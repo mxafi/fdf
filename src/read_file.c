@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:24:00 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/16 20:00:01 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/18 00:38:15 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	read_file(char *file_path, t_fdf *fdf)
 	if (!(fdf->z_grid))
 		exit (1);
 	i = 0;
-	while (i <= fdf->height)
+	while (i < fdf->height)
 		fdf->z_grid[i++] = malloc(sizeof(int *) * (fdf->width + 1));
 	fd = open(file_path, O_RDONLY);
 	i = 0;
@@ -93,5 +93,5 @@ void	read_file(char *file_path, t_fdf *fdf)
 		free(line);
 	}
 	close(fd);
-	fdf->z_grid[i] = NULL;
+	//fdf->z_grid[i] = NULL;
 }
