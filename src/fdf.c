@@ -6,11 +6,18 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/17 16:34:57 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 19:36:36 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+int	keyboard_event(int keycode, void *param)
+{
+	ft_printf("%i", keycode);
+	(void)param;
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -26,21 +33,16 @@ int	main(int argc, char **argv)
 	fdf = malloc(sizeof(t_fdf));
 	if (!fdf)
 		return (1);
+	fdf->start_x = 10;
+	fdf->start_y = 10;
+	fdf->end_x = 600;
+	fdf->end_y = 300;
 	read_file(argv[1], fdf);
 	ft_printf("Size: %i by %i\n", fdf->height, fdf->width);
-	int i, j;
-
-	i = 0;
-	while (i < fdf->height)
-	{
-		j = 0;
-		while (j < fdf->width)
-		{
-			ft_printf("%i", fdf->z_grid[i][j]);
-			j++;
-		}
-		ft_printf("\n");
-		i++;
-	}
+	fdf->mlx_ptr = mlx_init();
+	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1000, 1000, "FdF");
+	draw_line(fdf);
+	(void)mlx_key_hook(fdf->win_ptr, keyboard_event, NULL);
+	mlx_loop(fdf->mlx_ptr);
 	return (0);
 }

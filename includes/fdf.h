@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/17 18:23:50 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 19:07:51 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		check_file(char *file_path);
 void	read_file(char *file_path, t_fdf *fdf);
 float	float_max_2(float a, float b);
 float	float_abs(float x);
+void	draw_line(t_fdf *fdf);
 
 #endif
