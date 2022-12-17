@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 17:24:48 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/17 17:55:42 by malaakso         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:58:47 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,9 @@ float	float_max_2(float a, float b)
 	return (b);
 }
 
-
+float	float_abs(float x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}
