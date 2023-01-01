@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 00:05:40 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 17:39:10 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 19:19:37 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static void	destroy_z_grid(t_fdf *fdf)
 void	clean_exit(int exit_code, t_fdf *fdf)
 {
 	mlx_destroy_window(fdf->mlx_ptr, fdf->win_ptr);
-	mlx_destroy_image(fdf->mlx_ptr, fdf->img_ptr);
+	mlx_destroy_image(fdf->mlx_ptr, fdf->img1_ptr);
+	mlx_destroy_image(fdf->mlx_ptr, fdf->img2_ptr);
 	destroy_z_grid(fdf);
 	free(fdf);
 	ft_printf("Clean exit done, bye.\n");

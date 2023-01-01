@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 17:46:43 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 19:17:07 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,7 @@ int	keyboard_event(int key_code, t_fdf *fdf)
 		clean_exit(0, fdf);
 	else
 		ft_printf("keycode: %i\n", key_code);
-	mlx_clear_window(fdf->mlx_ptr, fdf->win_ptr);
-	mlx_destroy_image(fdf->mlx_ptr, fdf->img_ptr);
-	fdf->img_ptr = mlx_new_image(fdf->mlx_ptr, 1000, 1000);
-	fdf->img_addr = mlx_get_data_addr(fdf->img_ptr, &fdf->img_bits_per_pixel,
-			&fdf->img_line_length, &fdf->img_endian);
-	draw(fdf);
-	mlx_put_image_to_window(fdf->mlx_ptr, fdf->win_ptr, fdf->img_ptr, 0, 0);
+	draw_flip_image(fdf);
 	return (0);
 }
 
@@ -64,13 +58,10 @@ int	main(int argc, char **argv)
 	ft_printf("Size: %i by %i\n", fdf->height, fdf->width);
 	fdf->mlx_ptr = mlx_init();
 	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1000, 1000, "FdF");
-	fdf->img_ptr = mlx_new_image(fdf->mlx_ptr, 1000, 1000);
-	fdf->img_addr = mlx_get_data_addr(fdf->img_ptr, &fdf->img_bits_per_pixel,
-			&fdf->img_line_length, &fdf->img_endian);
 	fdf->zoom = 32;
 	init_offset(fdf);
-	draw(fdf);
-	mlx_put_image_to_window(fdf->mlx_ptr, fdf->win_ptr, fdf->img_ptr, 0, 0);
+	init_img(fdf);
+	draw_flip_image(fdf);
 	(void)mlx_key_hook(fdf->win_ptr, keyboard_event, fdf);
 	mlx_loop(fdf->mlx_ptr);
 	return (0);

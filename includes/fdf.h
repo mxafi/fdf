@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 17:34:55 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 19:19:48 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ typedef struct s_fdf
 	int		map_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
-	void	*img_ptr;
-	char	*img_addr;
+	int		img_num;
+	void	*img1_ptr;
+	void	*img2_ptr;
+	char	*img1_addr;
+	char	*img2_addr;
 	int		img_bits_per_pixel;
 	int		img_line_length;
 	int		img_endian;
@@ -66,5 +69,7 @@ void	apply_offset(t_fdf *fdf);
 void	clean_exit(int exit_code, t_fdf *fdf);
 void	init_line_error(t_fdf *fdf);
 void	img_pixel_put(t_fdf *fdf, int x, int y, int color);
+void	init_img(t_fdf *fdf);
+void	draw_flip_image(t_fdf *fdf);
 
 #endif
