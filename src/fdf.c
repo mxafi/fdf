@@ -6,15 +6,16 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 19:17:07 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 19:26:02 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 // TODO STUFF
-// use mlx images instead of clearing and redrawing
-// fix clean exit function and stuffs, leaking 80 bytes
+// fix norm, clean up functions and files
+// fix image wrapping behaviour
+// fix clean exit function and stuffs
 // implement Click on window cross exit
 // bonuses?
 
