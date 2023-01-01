@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:24:00 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/18 00:38:15 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 17:11:00 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,4 @@ void	read_file(char *file_path, t_fdf *fdf)
 		free(line);
 	}
 	close(fd);
-	//fdf->z_grid[i] = NULL;
 }

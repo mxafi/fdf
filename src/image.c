@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cleaner.c                                          :+:      :+:    :+:   */
+/*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 00:05:40 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 17:39:10 by malaakso         ###   ########.fr       */
+/*   Created: 2023/01/01 17:26:06 by malaakso          #+#    #+#             */
+/*   Updated: 2023/01/01 17:33:12 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	destroy_z_grid(t_fdf *fdf)
+void	img_pixel_put(t_fdf *fdf, int x, int y, int color)
 {
-	int	i;
+	char	*dst;
 
-	i = 0;
-	while (i < fdf->height)
-	{
-		free(fdf->z_grid[i]);
-		i++;
-	}
-	free(fdf->z_grid);
-}
-
-void	clean_exit(int exit_code, t_fdf *fdf)
-{
-	mlx_destroy_window(fdf->mlx_ptr, fdf->win_ptr);
-	mlx_destroy_image(fdf->mlx_ptr, fdf->img_ptr);
-	destroy_z_grid(fdf);
-	free(fdf);
-	ft_printf("Clean exit done, bye.\n");
-	exit (exit_code);
+	dst = fdf->img_addr
+		+ (y * fdf->img_line_length + x * (fdf->img_bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }

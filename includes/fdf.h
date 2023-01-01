@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/18 00:17:16 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/01 17:34:55 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,31 @@ typedef struct s_fdf
 	int		color;
 	int		line_offset_x;
 	int		line_offset_y;
-	float	line_x0;
-	float	line_y0;
-	float	line_z0;
-	float	line_x1;
-	float	line_y1;
-	float	line_z1;
-	float	line_x_step;
-	float	line_y_step;
-	float	map_x;
-	float	map_y;
+	int		line_x0;
+	int		line_y0;
+	int		line_z0;
+	int		line_x1;
+	int		line_y1;
+	int		line_z1;
+	int		line_dx;
+	int		line_dy;
+	int		line_x_step;
+	int		line_y_step;
+	int		line_error_historical;
+	int		line_error_current;
+	int		map_x;
+	int		map_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
+	void	*img_ptr;
+	char	*img_addr;
+	int		img_bits_per_pixel;
+	int		img_line_length;
+	int		img_endian;
 }				t_fdf;
 
 int		check_file(char *file_path);
 void	read_file(char *file_path, t_fdf *fdf);
-float	float_max_2(float a, float b);
-int		int_max_2(int a, int b);
-float	float_abs(float x);
-int		int_abs(int x);
 void	calculate_steps(t_fdf *fdf);
 void	draw(t_fdf *fdf);
 void	apply_line_coordinates(t_fdf *fdf);
@@ -59,5 +64,7 @@ void	apply_transform_isometric(t_fdf *fdf);
 void	init_offset(t_fdf *fdf);
 void	apply_offset(t_fdf *fdf);
 void	clean_exit(int exit_code, t_fdf *fdf);
+void	init_line_error(t_fdf *fdf);
+void	img_pixel_put(t_fdf *fdf, int x, int y, int color);
 
 #endif

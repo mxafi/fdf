@@ -6,7 +6,7 @@
 #    By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:25:10 by malaakso          #+#    #+#              #
-#    Updated: 2022/12/18 00:30:06 by malaakso         ###   ########.fr        #
+#    Updated: 2023/01/01 17:25:51 by malaakso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,13 @@ FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER) \
 
 H_FILES			=	fdf.h
 C_FILES			=	fdf.c read_file.c math.c check_file.c cleaner.c \
-					draw.c draw_modifiers.c offset.c
+					draw.c draw_modifiers.c offset.c image.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
-C_FLAGS_OBJ		=	-Wall -Wextra -Werror
+C_FLAGS_OBJ		=	-Wall -Wextra -g# -Werror
 C_FLAGS_NAME	=	$(C_FLAGS_OBJ) -lm -framework OpenGL -framework AppKit -g
 
 .PHONY: all
@@ -42,7 +42,7 @@ $(NAME): $(FOLDER_LIST) $(OBJ_PATHS) Makefile \
 	$(COMPILER) $(C_FLAGS_NAME) $(OBJ_PATHS) $(LIBFT_FOLDER)/$(LIBFT) $(MINILIBX_FOLDER)/$(MINILIBX) -o $@
 
 $(OBJ_PATHS): $(OBJ_FOLDER)/%.o:$(C_FOLDER)/%.c $(H_PATHS) Makefile
-	$(COMPILER) $(C_FLAGS_OBJ) -I $(H_FOLDER) -I $(LIBFT_FOLDER) -c $< -o $@
+	$(COMPILER) $(C_FLAGS_OBJ) -I $(H_FOLDER) -I $(LIBFT_FOLDER) -I $(MINILIBX_FOLDER) -c $< -o $@
 
 $(LIBFT_FOLDER)/$(LIBFT):
 	$(MAKE) -C $(LIBFT_FOLDER)
