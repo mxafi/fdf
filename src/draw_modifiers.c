@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 22:13:37 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/20 15:01:20 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:21:31 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	apply_color(t_fdf *fdf)
 
 void	apply_zoom(t_fdf *fdf)
 {
+	if (fdf->zoom < 0)
+		fdf->zoom = 0;
+	if (fdf->zoom > 1000)
+		fdf->zoom = 1000;
 	fdf->line_x0 *= fdf->zoom;
 	fdf->line_y0 *= fdf->zoom;
 	fdf->line_x1 *= fdf->zoom;

@@ -6,15 +6,15 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/02 17:00:26 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:27:01 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 // TODO STUFF
+// fix off by one map rendering (top row is missing)
 // fix norm, clean up functions and files
-// fix image wrapping behaviour
 // fix clean exit function and stuffs
 // implement Click on window cross exit
 // bonuses?
@@ -30,9 +30,9 @@ int	keyboard_event(int key_code, t_fdf *fdf)
 	else if (key_code == 125)
 		fdf->line_offset_y -= 15;
 	else if (key_code == 78)
-		fdf->zoom -= 5;
+		fdf->zoom = fdf->zoom / 1.1 - 1;
 	else if (key_code == 69)
-		fdf->zoom += 5;
+		fdf->zoom = fdf->zoom * 1.1 + 1;
 	else if (key_code == 53)
 		clean_exit(0, fdf);
 	else
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	init_offset(fdf);
 	init_img(fdf);
 	draw_flip_image(fdf);
-	(void)mlx_key_hook(fdf->win_ptr, keyboard_event, fdf);
+	mlx_hook(fdf->win_ptr, 02, 0L, keyboard_event, fdf);
 	mlx_loop(fdf->mlx_ptr);
 	return (0);
 }

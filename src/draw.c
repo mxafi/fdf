@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 17:24:44 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 18:55:49 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:12:13 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	draw_line_bresenham(t_fdf *fdf)
 	apply_line_coordinates(fdf);
 	apply_color(fdf);
 	apply_zoom(fdf);
-	apply_transform_isometric(fdf);
+	//apply_transform_isometric(fdf);
 	apply_offset(fdf);
 	calculate_steps(fdf);
 	init_line_error(fdf);

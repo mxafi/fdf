@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:24:00 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 17:11:00 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 18:36:20 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ret_width(char *file_path)
 	return (width);
 }
 
-void	populate_row(int *z_grid, char *line)
+void	populate_row(int *z_row, char *line)
 {
 	char	**word_grid;
 	int		i;
@@ -60,7 +60,7 @@ void	populate_row(int *z_grid, char *line)
 	i = 0;
 	while (word_grid[i])
 	{
-		z_grid[i] = ft_atoi(word_grid[i]);
+		z_row[i] = ft_atoi(word_grid[i]);
 		free(word_grid[i]);
 		i++;
 	}
@@ -82,10 +82,13 @@ void	read_file(char *file_path, t_fdf *fdf)
 	while (i < fdf->height)
 		fdf->z_grid[i++] = malloc(sizeof(int *) * (fdf->width + 1));
 	fd = open(file_path, O_RDONLY);
+	close(fd);
+	fd = open(file_path, O_RDONLY);
 	i = 0;
 	while (i < fdf->height)
 	{
 		line = get_next_line(fd);
+		ft_printf("i: %i, Line: %s\n", i, line); //debug
 		if (!line)
 			break ;
 		populate_row(fdf->z_grid[i], line);
@@ -93,4 +96,5 @@ void	read_file(char *file_path, t_fdf *fdf)
 		free(line);
 	}
 	close(fd);
+	ft_printf("\n");//print_z_grid(fdf);
 }
