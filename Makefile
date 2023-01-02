@@ -6,7 +6,7 @@
 #    By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:25:10 by malaakso          #+#    #+#              #
-#    Updated: 2023/01/01 17:25:51 by malaakso         ###   ########.fr        #
+#    Updated: 2023/01/02 15:32:34 by malaakso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
 C_FLAGS_OBJ		=	-Wall -Wextra -g# -Werror
-C_FLAGS_NAME	=	$(C_FLAGS_OBJ) -lm -framework OpenGL -framework AppKit -g
+C_FLAGS_NAME	=	$(C_FLAGS_OBJ) -lm -framework OpenGL -framework AppKit -g -fsanitize=address
 
 .PHONY: all
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 19:19:48 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 16:55:32 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 
 # define COLOR_WHITE 0xffffff
 # define COLOR_RED 0xff0000
+# ifndef WINDOW_HEIGHT
+#  define WINDOW_HEIGHT 1000
+# endif
+# ifndef WINDOW_WIDTH
+#  define WINDOW_WIDTH 1000
+# endif
 
 typedef struct s_fdf
 {

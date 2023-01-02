@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/01 19:26:02 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/02 17:00:26 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 int	keyboard_event(int key_code, t_fdf *fdf)
 {
 	if (key_code == 123)
-		fdf->line_offset_x -= 15;
-	else if (key_code == 124)
 		fdf->line_offset_x += 15;
+	else if (key_code == 124)
+		fdf->line_offset_x -= 15;
 	else if (key_code == 126)
-		fdf->line_offset_y -= 15;
-	else if (key_code == 125)
 		fdf->line_offset_y += 15;
+	else if (key_code == 125)
+		fdf->line_offset_y -= 15;
 	else if (key_code == 78)
 		fdf->zoom -= 5;
 	else if (key_code == 69)
@@ -58,7 +58,8 @@ int	main(int argc, char **argv)
 	read_file(argv[1], fdf);
 	ft_printf("Size: %i by %i\n", fdf->height, fdf->width);
 	fdf->mlx_ptr = mlx_init();
-	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, 1000, 1000, "FdF");
+	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr,
+			WINDOW_WIDTH, WINDOW_HEIGHT, "FdF");
 	fdf->zoom = 32;
 	init_offset(fdf);
 	init_img(fdf);
