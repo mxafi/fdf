@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/02 17:36:18 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:56:13 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,5 @@ void	init_line_error(t_fdf *fdf);
 void	img_pixel_put(t_fdf *fdf, int x, int y, int color);
 void	init_img(t_fdf *fdf);
 void	draw_flip_image(t_fdf *fdf);
-void	print_z_grid(t_fdf *fdf);
 
 #endif

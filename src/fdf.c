@@ -6,14 +6,13 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/02 17:27:01 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:54:21 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 // TODO STUFF
-// fix off by one map rendering (top row is missing)
 // fix norm, clean up functions and files
 // fix clean exit function and stuffs
 // implement Click on window cross exit
