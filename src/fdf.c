@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/04 16:54:21 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/10 11:29:48 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 // TODO STUFF
 // fix norm, clean up functions and files
 // fix clean exit function and stuffs
-// implement Click on window cross exit
-// bonuses?
 
 int	keyboard_event(int key_code, t_fdf *fdf)
 {
@@ -37,6 +35,12 @@ int	keyboard_event(int key_code, t_fdf *fdf)
 	else
 		ft_printf("keycode: %i\n", key_code);
 	draw_flip_image(fdf);
+	return (0);
+}
+
+int	destroy_event(t_fdf *fdf)
+{
+	clean_exit(0, fdf);
 	return (0);
 }
 
@@ -64,6 +68,7 @@ int	main(int argc, char **argv)
 	init_img(fdf);
 	draw_flip_image(fdf);
 	mlx_hook(fdf->win_ptr, 02, 0L, keyboard_event, fdf);
+	mlx_hook(fdf->win_ptr, 17, 0L, destroy_event, fdf);
 	mlx_loop(fdf->mlx_ptr);
 	return (0);
 }
