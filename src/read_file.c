@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:24:00 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/04 17:02:26 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:14:12 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,15 @@ static int	ret_width(char *file_path)
 	line = get_next_line(fd);
 	word_grid = ft_split(line, ' ');
 	while (line)
+	{
+		free (line);
 		line = get_next_line(fd);
+	}
 	width = 0;
 	while (word_grid[width])
 	{
-		width++;
 		free(word_grid[width]);
+		width++;
 	}
 	free(word_grid);
 	close(fd);
@@ -97,11 +100,11 @@ void	read_file(char *file_path, t_fdf *fdf)
 
 	fdf->height = ret_height(file_path);
 	fdf->width = ret_width(file_path);
-	fdf->z_grid = malloc(sizeof(int *) * (fdf->height + 1));
+	fdf->z_grid = malloc(sizeof(int *) * (fdf->height));
 	if (!(fdf->z_grid))
 		exit (1);
 	i = 0;
 	while (i < fdf->height)
-		fdf->z_grid[i++] = malloc(sizeof(int *) * (fdf->width + 1));
+		fdf->z_grid[i++] = malloc(sizeof(int *) * (fdf->width));
 	populate_grid(file_path, fdf);
 }

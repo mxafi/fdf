@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/10 11:29:48 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:15:17 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // TODO STUFF
 // fix norm, clean up functions and files
-// fix clean exit function and stuffs
+// remove debug stuff from Makefile and source/header files
 
 int	keyboard_event(int key_code, t_fdf *fdf)
 {
