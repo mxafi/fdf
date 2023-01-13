@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:35:48 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/12 16:15:17 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:22:12 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int	keyboard_event(int key_code, t_fdf *fdf)
 		fdf->zoom = fdf->zoom * 1.1 + 1;
 	else if (key_code == 53)
 		clean_exit(0, fdf);
-	else
-		ft_printf("keycode: %i\n", key_code);
 	draw_flip_image(fdf);
 	return (0);
 }
@@ -50,7 +48,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2 || argc > 2)
 	{
-		ft_printf("Usage : ./fdf <file>.fdf\n");
+		write(1, "Usage : ./fdf <file.fdf>\n", 26);
 		return (1);
 	}
 	if (!check_file(argv[1]))
@@ -59,7 +57,6 @@ int	main(int argc, char **argv)
 	if (!fdf)
 		return (1);
 	read_file(argv[1], fdf);
-	ft_printf("Size: %i by %i\n", fdf->height, fdf->width);
 	fdf->mlx_ptr = mlx_init();
 	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr,
 			WINDOW_WIDTH, WINDOW_HEIGHT, "FdF");

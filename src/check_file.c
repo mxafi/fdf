@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:29:27 by malaakso          #+#    #+#             */
-/*   Updated: 2022/12/16 17:38:16 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:22:30 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	check_file(char *file_path)
 	fd = open(file_path, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_printf("File is not valid.\n");
+		write(1, "File is not valid.\n", 20);
 		return (0);
 	}
 	if (!is_file_descriptor_valid(fd))
 	{
-		ft_printf("File is not valid.\n");
+		write(1, "File is not valid.\n", 20);
 		close(fd);
 		return (0);
 	}

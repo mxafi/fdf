@@ -6,7 +6,7 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:28:18 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/04 16:56:13 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:06:08 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,18 +64,15 @@ typedef struct s_fdf
 
 int		check_file(char *file_path);
 void	read_file(char *file_path, t_fdf *fdf);
-void	calculate_steps(t_fdf *fdf);
 void	draw(t_fdf *fdf);
-void	apply_line_coordinates(t_fdf *fdf);
+void	draw_flip_image(t_fdf *fdf);
+void	img_pixel_put(t_fdf *fdf, int x, int y, int color);
+void	init_img(t_fdf *fdf);
+void	init_offset(t_fdf *fdf);
 void	apply_color(t_fdf *fdf);
 void	apply_zoom(t_fdf *fdf);
 void	apply_transform_isometric(t_fdf *fdf);
-void	init_offset(t_fdf *fdf);
 void	apply_offset(t_fdf *fdf);
 void	clean_exit(int exit_code, t_fdf *fdf);
-void	init_line_error(t_fdf *fdf);
-void	img_pixel_put(t_fdf *fdf, int x, int y, int color);
-void	init_img(t_fdf *fdf);
-void	draw_flip_image(t_fdf *fdf);
 
 #endif

@@ -6,19 +6,11 @@
 /*   By: malaakso <malaakso@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 22:13:37 by malaakso          #+#    #+#             */
-/*   Updated: 2023/01/04 17:08:15 by malaakso         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:03:06 by malaakso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	apply_line_coordinates(t_fdf *fdf)
-{
-	fdf->line_x0 = fdf->map_x;
-	fdf->line_y0 = fdf->map_y;
-	fdf->line_z0 = fdf->z_grid[(int)fdf->line_y0][(int)fdf->line_x0];
-	fdf->line_z1 = fdf->z_grid[(int)fdf->line_y1][(int)fdf->line_x1];
-}
 
 void	apply_color(t_fdf *fdf)
 {
