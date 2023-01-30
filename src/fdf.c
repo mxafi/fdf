@@ -12,10 +12,6 @@
 
 #include "fdf.h"
 
-// TODO STUFF
-// fix norm, clean up functions and files
-// remove debug stuff from Makefile and source/header files
-
 int	keyboard_event(int key_code, t_fdf *fdf)
 {
 	if (key_code == 123)
